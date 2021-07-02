@@ -56,6 +56,7 @@ print(geo.crs)
 geodata = None
 geodata = geo.join(data)
 
+
 #TEST CODE
 # Check the join output
 print(geodata.head())
