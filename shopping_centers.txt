@@ -1,0 +1,3 @@
+"Tokyu Department Store";"東京都渋谷区道玄坂２丁目２４−１"
+"Seibu Shibuya Store";"東京都渋谷区宇田川町２１−１"
+"National Azabu";"港区南麻布4-5-2"
