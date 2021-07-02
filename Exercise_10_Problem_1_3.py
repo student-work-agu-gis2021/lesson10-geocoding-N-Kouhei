@@ -9,6 +9,8 @@
 # Import modules
 import geopandas as gpd
 import pandas as pd
+import requests
+import geojson
 # Read the data (replace "None" with your own code)
 data = None
 # YOUR CODE HERE 1 to read the data
@@ -109,15 +111,14 @@ print(geodata.head())
 
 # YOUR CODE HERE 9
 # Read population grid data for 2018 into a variable `pop`. 
-import requests
-import geojson
+
 url = 'https://kartta.hsy.fi/geoserver/wfs'
 params = dict(service='WFS',version='2.0.0',request='GetFeature',
               typeName='asuminen_ja_maankaytto:Vaestotietoruudukko_2018',outputFormat='json')
 r = requests.get(url, params=params)
 pop = gpd.GeoDataFrame.from_features(geojson.loads(r.content))
 pop = pop[['geometry', 'asukkaita']]
-pop.crs = CRS.from_epsg(3879).to_wkt()
+pop.crs = CRS.from_epsg(6668).to_wkt()
 geodata = geodata.to_crs(pop.crs)
 
 #TEST CODE
